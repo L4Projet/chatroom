@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from '@angular/fire/compat/auth'
+import { GoogleAuthProvider } from '@angular/fire/auth'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public authServ : AngularFireAuth) { }
+  constructor(public authServ : AngularFireAuth, public router : Router) { }
 
   async login(email: string, password: string) {
     return await this.authServ.signInWithEmailAndPassword(email, password);
@@ -36,6 +38,16 @@ export class AuthService {
     return await this.authServ.sendPasswordResetEmail(email);
   }
 
-  //Methode permettant de verifier l'addresse email de l'utilisateur
+  //Methode permettant a l'utilisateur de ce connecté avec sont compte google
+  async connectgoogle () {
+      this.authServ.signInWithPopup(new GoogleAuthProvider).then((res: any) => {
+      if(res.user){
+        this.router.navigate(["tabs"])
+      }else{
+        console.log("impossible de se connecter avec google");
+
+      }
+    })
+  }
 
 }

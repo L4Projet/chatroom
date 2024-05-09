@@ -51,4 +51,8 @@ export class ConnexionPage implements OnInit {
       alert("Formulaire invalid")
     }
   }
+
+  connecavecgoogle(){
+    this.authservice.connectgoogle()
+  }
 }
