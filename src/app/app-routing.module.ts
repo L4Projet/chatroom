@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/front/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'changerpass',
+    loadChildren: () => import('./pages/auth/changerpass/changerpass.module').then( m => m.ChangerpassPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -42,17 +42,17 @@ export class ConnexionPage implements OnInit {
     if (this.connexionForm.valid) {
       const mail = this.connexionForm.value.email
       const pass = this.connexionForm.value.password
-      this.authservice.login(mail,pass).then(()=>{
-        this.router.navigate(["tabs"])
-      }).catch(()=>{
-        alert("Email ou mot de passe incorrect")
-      })
+      this.authservice.login(mail,pass)
     } else {
       alert("Formulaire invalid")
     }
   }
 
   connecavecgoogle(){
-    this.authservice.connectgoogle()
+    return this.authservice.connectgoogle()
+  }
+
+  changermotdepass(){
+    this.router.navigate(['changerpass'])
   }
 }

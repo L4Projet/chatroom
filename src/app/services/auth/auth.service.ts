@@ -11,12 +11,36 @@ export class AuthService {
   constructor(public authServ : AngularFireAuth, public router : Router) { }
 
   async login(email: string, password: string) {
-    return await this.authServ.signInWithEmailAndPassword(email, password);
+    return await this.authServ.signInWithEmailAndPassword(email, password).then((res: any)=>{
+      if(res.user.emailVerified){
+        this.router.navigate(["tabs"])
+      }else{
+        alert("Veuillez vérifier votre email")
+      }
+    }).catch(()=>{
+      alert("Email ou mot de passe incorrect")
+    });
   }
 
   //Methode permettant de s'inscrire
   async register(email: string, password: string) {
-    return await this.authServ.createUserWithEmailAndPassword(email, password);
+    return await this.authServ.createUserWithEmailAndPassword(email, password).then((res: any)=>{
+      this.sendEmailVerification(res.user)
+      this.router.navigate(["connexion"])
+    }).catch(()=>{
+      alert("Erreur lors de l'inscription")
+    });
+  }
+
+  //Methode permettant d'envoyer un email de verification
+  async sendEmailVerification(user: any) {
+    if(user){
+      user.sendEmailVerification().then(()=>{
+        alert("Un email vous a ete envoye")
+      }).catch(()=>{
+        alert("Erreur lors de l'envoie de l'email de verification")
+      })
+    }
   }
 
   //Methode permettant de se déconnecter
@@ -42,9 +66,11 @@ export class AuthService {
   async connectgoogle () {
       this.authServ.signInWithPopup(new GoogleAuthProvider).then((res: any) => {
       if(res.user){
+        console.log(res.user);
+
         this.router.navigate(["tabs"])
       }else{
-        console.log("impossible de se connecter avec google");
+        alert("impossible de se connecter avec google");
 
       }
     })

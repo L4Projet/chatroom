@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Chatroom</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    Changer votre mot de passe
+  </div>
+  <!-- //code qui genere un champ de saisi pour l'email avec le composant ion-input de ionic -->
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="email" type="email" placeholder="Donnez votre adresse email" label="Votre adresse email" labelPlacement="floating"></ion-input>
+      <ion-button color="dark" (click)="modifierPass()">
+        <ion-icon slot="icon-only" name="checkmark-done-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

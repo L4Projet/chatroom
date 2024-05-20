@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(public authserv: AuthService,public router:Router) {
+
+  }
+
+  logout(){
+    this.authserv.logout().then(()=>{
+      this.router.navigate(['connexion'])
+    }).catch(()=>{
+      alert("Erreur de deconnexion")
+    });
+  }
 
 }

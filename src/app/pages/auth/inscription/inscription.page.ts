@@ -42,15 +42,13 @@ export class InscriptionPage implements OnInit {
     if (this.connexionForm.valid) {
       const mail = this.connexionForm.value.email
       const pass = this.connexionForm.value.password
-      this.authservice.register(mail,pass).then(()=>{
-        this.router.navigate(["connexion"])
-      }).catch(()=>{
-        alert("Erreur lors de l'inscription")
-      })
+      this.authservice.register(mail,pass)
 
     } else {
       alert("Formulaire invalid")
     }
   }
+
+  
 
 }
