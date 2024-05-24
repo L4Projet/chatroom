@@ -18,7 +18,7 @@ export class ConnexionPage implements OnInit {
   constructor(public router: Router, public formbuilder: FormBuilder, public authservice: AuthService) {
     this.connexionForm = this.formbuilder.group({
       email: ['', [Validators.required,Validators.pattern("[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$")]],
-      password: ['', [Validators.required,Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]]
+      password: ['', [Validators.required,Validators.pattern("")]]//(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}
     });
   }
 
