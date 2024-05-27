@@ -1,0 +1,33 @@
+
+
+<ion-content [fullscreen]="true">
+  <div class="img-cover">
+    <img src="../../../../assets/images/1.jpg" alt="" height="200px" width="100%">
+  </div>
+  <div class="img-profile">
+    <img src="../../../../assets/images/3.jpg" alt="" height="130px" width="130px">
+  </div>
+
+  <ion-label class="ion-padding">Nom d'utiisateur</ion-label>
+  <ion-card>
+    <ion-item (click)="openusernamemodal()">
+      <ion-label>Donner votre nom d'utilisateur</ion-label>
+      <ion-icon slot="end" name="chevron-forward"></ion-icon>
+    </ion-item>
+  </ion-card>
+
+  <ion-label class="ion-padding">Numéro de téléphone</ion-label>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" placeholder="Votre numéro de téléphone"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-label class="ion-padding">Description de l'entreprise</ion-label>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" placeholder="Description de l'entreprise"></ion-input>
+      <ion-icon slot="end" name="chevron-forward"></ion-icon>
+    </ion-item>
+  </ion-card>
+</ion-content>
