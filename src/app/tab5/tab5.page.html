@@ -10,26 +10,114 @@
       <ion-title size="large">Paramètres</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar placeholder="Rechercher"  ></ion-searchbar>
-  <ion-card>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="../../assets/images/1.jpg" title="images avatar"/>
+  <ion-searchbar placeholder="Rechercher" mode="ios"></ion-searchbar>
+  <div class="block_profil">
+    <ion-card>
+      <ion-item (click)="openProfileDetail()">
+        <ion-avatar slot="start">
+          <img src="../../assets/images/1.jpg" />
+        </ion-avatar>
+        <ion-label>Hassan BANGOURA <br>
+          <p>Entrepreneur</p>
+        </ion-label>
+        <div class="qr_code">
+          <ion-icon slot="end" name="qr-code-outline"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="second_item" >
+        <div class="qr_code_two">
+          <ion-icon slot="start" name="analytics-outline" ></ion-icon>
+        </div>
+        <ion-label color="primary">Completer mon profil</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+    </ion-card>
 
-      </ion-avatar>
-      <ion-label>Nom complet
-        <p>Petite description</p>
-      </ion-label>
-      <div class="qr_code">
-        <ion-icon slot="start"  name="qr-code-outline"></ion-icon>
-      </div>
-    </ion-item>
-    <ion-item lines="none" class="it_custom">
-      <div class="icon-modif">
-        <ion-icon name="pizza" size="medium" slot="start"></ion-icon>
-      </div>
-      <ion-label color="primary">Modifier votre profil</ion-label>
-      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
-    </ion-item>
-  </ion-card>
+    <ion-card>
+      <ion-item class="second_item" >
+        <div class="qr_code_three">
+          <ion-icon slot="start" name="megaphone"></ion-icon>
+        </div>
+        <ion-label color="dark">Promouvoir</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="second_item" >
+        <div class="qr_code_four">
+          <ion-icon slot="start" name="storefront-outline" size="medium"></ion-icon>
+        </div>
+        <ion-label color="dark">Outils professionnels</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item class="second_item" >
+        <div class="qr_code_five">
+          <ion-icon slot="start" name="megaphone"></ion-icon>
+        </div>
+        <ion-label color="dark">Liste de diffusion</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item class="second_item" >
+        <div class="qr_code_six">
+          <ion-icon slot="start" name="star"></ion-icon>
+        </div>
+        <ion-label color="dark">Message important</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item class="second_item" >
+        <div class="qr_code_seven">
+          <ion-icon slot="start" name="people"></ion-icon>
+        </div>
+        <ion-label color="dark">Communauté</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="second_item" >
+        <div class="qr_code_eight">
+          <ion-icon slot="start" name="laptop-outline" size="medium"></ion-icon>
+        </div>
+        <ion-label color="dark">Appareils connectés</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item class="second_item" >
+        <div class="qr_code_nine">
+          <ion-icon slot="start" name="key"></ion-icon>
+        </div>
+        <ion-label color="dark">Compte</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item class="second_item" >
+        <div class="qr_code_ten">
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+        </div>
+        <ion-label color="dark">Confidentialité</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item class="second_item" >
+        <div class="qr_code_eleven">
+          <ion-icon slot="start" name="logo-whatsapp"></ion-icon>
+        </div>
+        <ion-label color="dark">Discussion</ion-label>
+        <ion-badge color="dark" mode="ios">2</ion-badge>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="second_item" >
+        <div class="qr_code_twelve">
+          <ion-icon slot="start" name="notifications" size="medium"></ion-icon>
+        </div>
+        <ion-label color="dark">Notifications</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="second_item" >
+        <div class="qr_code_thirteen">
+          <ion-icon slot="start" name="cloud-download" size="medium"></ion-icon>
+        </div>
+        <ion-label color="dark">Stockage et données</ion-label>
+        <ion-icon slot="end" name="chevron-forward-outline" size="small"></ion-icon>
+      </ion-item>
+    </ion-card>
+  </div>
 </ion-content>

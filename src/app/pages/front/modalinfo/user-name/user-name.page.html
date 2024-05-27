@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        
+        Annuler
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nom d'utilisateur</ion-title>
+    <ion-buttons slot="end">
+      <ion-button >
+        Enregistrer
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="text-acc">
+    <ion-label>Saisissez votre informations</ion-label>
+  </div>
+
+  <ion-card>
+      <ion-textarea placeholder="Donnez votre nom d'utilisateur"></ion-textarea>
+  </ion-card>
+  
+</ion-content>
